@@ -1,6 +1,6 @@
 const { scrapeDataFromAmazon }  =  require("../services/amazonScraper");
 
-const scrape = async function (req, res) {
+const scrapeSearchResult = async function (req, res) {
     try {
         const keyword = req.query.keyword;
         const scrapedData = await scrapeDataFromAmazon(keyword);
@@ -15,4 +15,4 @@ const scrape = async function (req, res) {
     }
 }
 
-module.exports = { scrape };
+module.exports = { scrapeSearchResult };

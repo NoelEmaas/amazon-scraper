@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Geist-Regular;
+    src: url(../assets/fonts/Geist-Regular.otf);
+}
+
+@font-face {
+    font-family: Geist-Medium;
+    src: url(../assets/fonts/Geist-Medium.otf);
+}
+
+@font-face {
+    font-family: Geist-Light;
+    src: url(../assets/fonts/Geist-Light.otf);
+}
+
+@font-face {
+    font-family: Geist-Bold;
+    src: url(../assets/fonts/Geist-Bold.otf);
+}
+
+
+#top-bar {
+    width: 100%;
+    height: 150px;
+    background-color: #131921;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 16px;
+}
+
+#searchForm {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchInput {
+    padding: 14px 10px;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+}
+
+#searchButton {
+    padding: 14px 16px;
+    font-size: 14px;
+    border-color: #FEBD69;
+    background-color: #FEBD69;
+    color: #131921;
+    font-weight: medium;
+}
+
+#product-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    padding: 16px;
+    margin: auto;
+}
+
+
+@media screen and (min-width: 640px) {
+    #searchForm {
+        width: 640px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    #product-container {
+        width: 1280px;
+    }
+}
