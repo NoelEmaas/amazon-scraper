@@ -1,12 +1,17 @@
-const { scrapeDataFromAmazon }  =  require("../services/amazonScraper");
+const { scrapeSearchResult }  =  require("../services/amazonScraper");
 
-const scrapeSearchResult = async function (req, res) {
+const getSearchResult = async function (req, res) {
     try {
         const keyword = req.query.keyword;
-        const scrapedData = await scrapeDataFromAmazon(keyword);
-        res.send(scrapedData.data);
+        const response = await scrapeSearchResult(keyword);
+
+        if (!response.success) {
+            res.status(500).json({ success: false, error: scrapedData.error });
+        }
+            
+        res.send({ success: true, data: response.data });
+
     } catch (error) {
-        console.log(error);
         res.status(500).json({ 
             success: false,
             error: 'Internal Server Error' 
@@ -14,4 +19,4 @@ const scrapeSearchResult = async function (req, res) {
     }
 }
 
-module.exports = { scrapeSearchResult };
+module.exports = { getSearchResult };

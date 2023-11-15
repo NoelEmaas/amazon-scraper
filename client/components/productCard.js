@@ -1,3 +1,7 @@
+/*
+*   This is a reusbale component that is used to display the product details in the search result page.
+*/
+
 class ProductCard extends HTMLElement {
     constructor() {
         super();
@@ -17,19 +21,24 @@ class ProductCard extends HTMLElement {
                     width: 100%;
                     padding: 20px 0px;
                     background-color: #F7F7F7;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
 
                 .image-container img {
                     height: 100%;
-                    width: 100%;
+                    width: 80%;
                     object-fit: contain;
                     mix-blend-mode: multiply;
                 }
 
                 .product-name {
+                    font-size: 14px;
                     font-family: Geist-Medium;
                     overflow: hidden;
                     color: #232F3E;
+                    padding-bottom: 2px;
                     display: -webkit-box;
                     -webkit-line-clamp: 2; /* Limit to 2 lines */
                     -webkit-box-orient: vertical;

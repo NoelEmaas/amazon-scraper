@@ -1,3 +1,7 @@
+/*
+*   This is a reusbale component that is used to display a loading preview animation when searching.
+*/
+
 class ProductCardSkeleton extends HTMLElement {
     constructor() {
         super();
@@ -28,13 +32,6 @@ class ProductCardSkeleton extends HTMLElement {
                     align-items: center;
                     justify-content: center;
                 }
-
-                // .image-container img {
-                //     height: 50%;
-                //     width: 50%;
-                //     object-fit: contain;
-                //     mix-blend-mode: multiply;
-                // }
 
                 .product-info {
                     padding: 2px 16px;

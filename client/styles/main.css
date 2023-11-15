@@ -20,42 +20,73 @@
     font-family: Geist-Regular;
 }
 
+body {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
 #top-bar {
     width: 100%;
-    height: fit-content;
-    background-color: #131921;
-    position: fixed;
-    top: 0;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px 16px;
+    padding: 0 16px;
     z-index: 10;
+    transition: width 0.5s, height 0.5s; 
+}
+
+#logo {
+    margin-bottom: 60px;
 }
 
 #searchForm {
     width: 100%;
     display: flex;
-    margin-top: 20px;
+    background-color: #F0F0F0;
     justify-content: center;
     align-items: center;
+    border-radius: 40px;
+    padding: 10px 12px;
+}
+
+#description {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-family: Geist-Medium;
+    color: #5f636b;
+    margin-top: 60px;
 }
 
 #searchInput {
-    padding: 14px 10px;
+    padding: 10px 20px;
     font-size: 14px;
     display: block;
+    background-color: transparent;
+    border: none;
+    outline: none;
     width: 100%;
 }
-
+ 
 #searchButton {
-    padding: 14px 16px;
+    border: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 10px 10px;
     font-size: 14px;
-    border-color: #FEBD69;
-    background-color: #FEBD69;
-    color: #131921;
-    font-weight: medium;
+    background-color: #F79B34;
+}
+
+#searchButton img {
+    width: 20px;
 }
 
 #product-container {
@@ -64,13 +95,41 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 16px;
     padding: 16px;
-    margin: 165px auto auto auto;
+    margin: auto;
     z-index: 0;
 }
 
+#error-container {
+    width: 100%;
+    height: 70vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-@media screen and (min-width: 640px) {
-    #searchForm {
+#error-message {
+    margin-top: 10px;
+}
+
+footer {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #F0F0F0;
+    font-size: 14px;
+    padding: 20px 0;
+}
+
+@media screen and (min-width: 640px ) {
+    #product-container {
+        gap: 32px;
+        padding: 32px;
+    }
+
+    #description {
         width: 640px;
     }
 }
@@ -78,5 +137,8 @@
 @media screen and (min-width: 1280px) {
     #product-container {
         width: 1280px;
+    }
+    #searchForm {
+        width: 768px;
     }
 }
