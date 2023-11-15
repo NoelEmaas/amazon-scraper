@@ -9,11 +9,6 @@
 }
 
 @font-face {
-    font-family: Geist-Light;
-    src: url(../assets/fonts/Geist-Light.otf);
-}
-
-@font-face {
     font-family: Geist-Bold;
     src: url(../assets/fonts/Geist-Bold.otf);
 }
