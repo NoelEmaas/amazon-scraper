@@ -5,9 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
     
         try {
             clearSearchResult();
+            displayCardSkeleton();
+
             const response = await fetch(`http://localhost:3000/api/scrape?keyword=${keyword}`);
             const data = await response.json();
-            console.log(data);
+
+            clearSearchResult();
 
             data.forEach(product => {
                 const productCard = new ProductCard();
@@ -30,8 +33,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function clearSearchResult () {
     var productContainer = document.getElementById('product-container');
-
     while (productContainer.firstChild) {
         productContainer.removeChild(productContainer.firstChild);
+    }
+}
+
+
+function displayCardSkeleton () {
+    for (let i = 0; i < 12; i++) {
+        const productCardSkeleton = new ProductCardSkeleton();
+        document.getElementById('product-container').appendChild(productCardSkeleton);
     }
 }
