@@ -40,16 +40,34 @@ class ProductCard extends HTMLElement {
                     padding: 2px 16px;
                 }
 
+                .product-rating {
+                    font-size: 14px;
+                    margin-left: 2px;
+                    color: #232F3E;
+                }
+
                 .product-details {
                     position: absolute;
-                    padding: 0px 16px;
                     bottom: 0;
                     left: 0;
+                    height: 45px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-top: 1px solid #F0F0F0;
                 }
 
                 .rating-container {
                     display: flex;
                     align-items: center;
+                    padding-left: 16px;
+                }
+
+                .product-number-of-ratings {
+                    font-size: 14px;
+                    margin-right: 16px;
+                    color: #232F3E;
                 }
 
                 .star-rating {
@@ -69,25 +87,36 @@ class ProductCard extends HTMLElement {
                     padding: 0;
                     margin: 0;
                 }
+                
+                .product-link {
+                    text-decoration: none;
+                }
 
             </style>
-            <div class="product-card">
-                <div class="image-container">
-                    <img src="" alt="product image" class="product-image">
-                </div>
-                <div class="product-info">
-                    <p class="product-name"></p>
+            <a href="" class="product-link">
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="" alt="product image" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name"></p>
+                        <p class="product-price"></p>
+                    </div>
                     <div class="product-details">
                         <div class="rating-container">
                             <div class="star-rating"></div>
                             <p class="product-rating"></p>
-                            <p class="product-number-of-ratings"></p>
                         </div>
-                        <p class="product-price"></p>
+                        <p class="product-number-of-ratings"></p>
                     </div>
                 </div>
-            </div>
+            </a>
+
         `;
+    }
+
+    set link(value) {
+        this.shadowRoot.querySelector(".product-link").href = value;
     }
 
     set image(value) {
@@ -103,11 +132,11 @@ class ProductCard extends HTMLElement {
     }
 
     set rating(value) {
-        this.shadowRoot.querySelector(".product-rating").textContent = value;
+        this.shadowRoot.querySelector(".product-rating").textContent = "(" + value + ")";
     }
 
     set numberOfRatings(value) {
-        this.shadowRoot.querySelector(".product-number-of-ratings").textContent = value;
+        this.shadowRoot.querySelector(".product-number-of-ratings").textContent = value + " reviews";
     }
 
     set starRating(rating) {

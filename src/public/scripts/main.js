@@ -10,9 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             data.forEach(product => {
                 const productCard = new ProductCard();
+                productCard.link = product.link;
                 productCard.image = product.image;
                 productCard.name = product.name;
-                productCard.price = product.price;
+                productCard.price = product.price_whole + product.price_fraction;
                 productCard.rating = product.rating;
                 productCard.numberOfRatings = product.numberOfRatings;
                 productCard.starRating = parseFloat(product.rating.split(' ')[0]);
@@ -24,3 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+function clearSearchResult () {
+    document.getElementById('product-container').innerHTML = '';
+}
