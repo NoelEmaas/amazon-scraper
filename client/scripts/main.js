@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const keyword = document.getElementById('searchInput').value;
     
         try {
+            clearSearchResult();
             const response = await fetch(`http://localhost:3000/api/scrape?keyword=${keyword}`);
             const data = await response.json();
             console.log(data);
@@ -25,3 +26,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+function clearSearchResult () {
+    var productContainer = document.getElementById('product-container');
+
+    while (productContainer.firstChild) {
+        productContainer.removeChild(productContainer.firstChild);
+    }
+}
