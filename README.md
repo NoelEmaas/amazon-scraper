@@ -9,7 +9,7 @@ cd amazon-scraper
 
 #### To run the server:
 ```
-cd amazon-scraper/server
+cd server
 npm install
 npm run dev
 ```
@@ -21,7 +21,7 @@ npm run dev
 - Or using http-server:
 
 ```
-cd amazon-scraper/client
+cd client
 http-server .
 ```
 
