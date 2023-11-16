@@ -25,4 +25,6 @@ cd client
 http-server .
 ```
 
+# Demo
 
+![ezgif com-video-to-gif](https://github.com/NoelEmaas/amazon-scraper/assets/90034393/8da35eea-303c-43e2-b88e-0d7fab99ee5f)
