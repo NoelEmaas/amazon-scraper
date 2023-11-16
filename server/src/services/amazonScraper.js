@@ -27,8 +27,8 @@ const scrapeSearchResult = async (keyword) => {
                 name: $(el).find('h2 a span').text(),
                 price_whole: $(el).find('.a-price-whole').text() || 0,
                 price_fraction: $(el).find('.a-price-fraction').text() || "00",
-                rating: rating || 0,
-                numberOfRatings: numberOfRatings || 0,
+                rating: rating || "0",
+                numberOfRatings: numberOfRatings || "0",
                 image: $(el).find('.s-image').attr('src'),
                 link: 'https://www.amazon.in'+$(el).find('.a-link-normal').attr('href'),
             };

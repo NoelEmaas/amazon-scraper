@@ -43,6 +43,7 @@ class ProductCard extends HTMLElement {
                     -webkit-line-clamp: 2; /* Limit to 2 lines */
                     -webkit-box-orient: vertical;
                     text-overflow: ellipsis;
+                    min-height: 35px;
                 }
 
                 .product-info {
